@@ -9,7 +9,7 @@ def forem_name
 end
 
 def forem_email
-  email_address
+  email
 end
 
 	
