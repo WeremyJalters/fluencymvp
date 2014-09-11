@@ -35,6 +35,7 @@ gem 'forem-redcarpet', github: "radar/forem-redcarpet"
 gem 'will_paginate'
 gem 'simple_form'
 gem 'newrelic_rpm'
+gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
