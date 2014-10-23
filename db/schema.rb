@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140909213188) do
+ActiveRecord::Schema.define(version: 20141010174550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -131,6 +131,14 @@ ActiveRecord::Schema.define(version: 20140909213188) do
   add_index "forem_views", ["user_id"], name: "index_forem_views_on_user_id", using: :btree
   add_index "forem_views", ["viewable_id"], name: "index_forem_views_on_viewable_id", using: :btree
 
+  create_table "students", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",               null: false
     t.string   "encrypted_password",     default: "",               null: false
@@ -148,6 +156,7 @@ ActiveRecord::Schema.define(version: 20140909213188) do
     t.boolean  "forem_admin",            default: false
     t.string   "forem_state",            default: "pending_review"
     t.boolean  "forem_auto_subscribe",   default: false
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
