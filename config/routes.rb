@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   devise_for :users
   
   resources :users, only: [:new, :create, :show] 
-  resource :students
+  resources :students
   
 
   # The priority is based upon order of creation: first created -> highest priority.
