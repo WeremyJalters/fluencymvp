@@ -2,6 +2,8 @@ class StudentsController < ApplicationController
 
 	def show
 		@student = Student.find(params[:id]) rescue nil
+		@books = Book.where(student_id: params[:id])
+        @book = Book.new  
 		
 		
     end
