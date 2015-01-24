@@ -17,6 +17,7 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+    
   end
 
   # GET /books/new

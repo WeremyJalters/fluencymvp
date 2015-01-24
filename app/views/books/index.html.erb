@@ -1,6 +1,8 @@
-<h1>Listing books</h1>
+<h1>Books for Current Student</h1>
 
-<table>
+
+
+<table class="table">
   <thead>
     <tr>
       <th>Book name</th>
@@ -20,9 +22,9 @@
         <td><%= book.total_words %></td>
         <td><%= book.words_wrong %></td>
         <td><%= book.self_corrections %></td>
-        <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show Book', book %></td>
+        <td><%= link_to 'Modify Book', edit_book_path(book) %></td>
+        <td><%= link_to 'Remove Book', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Book', new_book_path %>
+
