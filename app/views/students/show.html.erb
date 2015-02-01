@@ -5,7 +5,10 @@
 <%= @student.first_name %> <%= @student.last_name %>
 </br>
 
+
 <%= render :partial => "books/form" %>
+
+
 
 
 <table class="table">
@@ -19,12 +22,21 @@
  </thead>
 
  <tbody>
- 	<tr>
- 		<td> </td>
- 		<td></td>
- 	</tr>
+ 	<% @books.each do |book| %>
+      <tr>
+        <td><%= book.book_name %></td>
+        <td><%= book.book_level %></td>
+        <td><%= book.total_words %></td>
+        <td><%= book.words_wrong %></td>
+        <td><%= book.self_corrections %></td>
+        <td><%= link_to 'Show Book', book %></td>
+        <td><%= link_to 'Modify Book', edit_book_path(book) %></td>
+        <td><%= link_to 'Remove Book', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
  </tbody>
 </table>
+
 
 
   

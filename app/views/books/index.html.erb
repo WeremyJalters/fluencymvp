@@ -1,5 +1,4 @@
-<h1>Books for Current Student </h1>
-
+<h1><%="Books for #{@student.first_name} #{@student.last_name}" %></h1>
 <p>
   Download:
   <%= link_to "CSV", student_books_path(format: "csv") %> |

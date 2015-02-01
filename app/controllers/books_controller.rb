@@ -5,9 +5,9 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     if params[:student_id]
-      student = Student.find(params[:student_id])
-      @books = student.books
-      
+      @student = Student.find(params[:student_id])
+      @books = @student.books
+
     else
       @books = Book.all
     end
