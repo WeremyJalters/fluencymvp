@@ -3,7 +3,6 @@
    <div class="col-md-4">
      <h1>Your Student List</h1>
 
-    
 
 			<% @students.each do |s| %>
 			<h2><%= link_to "#{s.first_name} #{s.last_name}", student_path(s) %></h2>

@@ -7,12 +7,19 @@ class BooksController < ApplicationController
     if params[:student_id]
       student = Student.find(params[:student_id])
       @books = student.books
+      
     else
       @books = Book.all
     end
-     
-    
+    respond_to do |format|
+      format.html
+      format.csv {render text: @books.to_csv }
+      
+    end
   end
+
+    
+  
 
   # GET /books/1
   # GET /books/1.json
@@ -78,4 +85,7 @@ class BooksController < ApplicationController
     def book_params
       params.require(:book).permit(:book_name, :book_level, :total_words, :words_wrong, :self_corrections, :student_id)
     end
+  
 end
+
+
