@@ -1,33 +1,31 @@
 <div class="container">
   <div class="row">
-   <div class="col-md-4">
-     <h1>Your Student List</h1>
+       <div class="col-md-8">
+         <h1>Your Student List</h1>
 
 
-			<% @students.each do |s| %>
-			<h2><%= link_to "#{s.first_name} #{s.last_name}", student_path(s) %></h2>
+    			<% @students.each do |s| %>
+    			<h2><%= link_to "#{s.first_name} #{s.last_name}", student_path(s) %></h2>
 
-			<% end %>
-		
-   </div>
-  <div class="col-md-4"> 
-  </div>
+    			<% end %>
+    		</div>
+        
+
 
   	<div class="col-md-4">
-		<%= simple_form_for @student do |f| %>
-  			<%= f.input :first_name %>
+		    <%= simple_form_for @student do |f| %>
+  			<%= f.input :first_name %> 
   			<%= f.input :last_name %>
   			<br>
   			<%= f.button :submit %>
   			<br>
-		<% end %>
+		    <% end %>
   	</div>
 
 
-    <div class="col-md-4"> 
-    </div>
+    
 
- </div>
+  
 </div>
 
  

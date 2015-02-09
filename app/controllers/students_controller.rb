@@ -9,7 +9,7 @@ class StudentsController < ApplicationController
     end
 
 	def create
-		student = Student.new(student_parameters)
+		@student = Student.new(student_parameters)
 		student.user_id = current_user.id
 		if student.save
 			redirect_to student

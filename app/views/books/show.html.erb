@@ -36,5 +36,12 @@
   <%= @book.scrate %>
  </p>
 
-<%= link_to 'Edit', edit_book_path(@book) %> |
+ <p>
+ <strong> Student </strong>
+  <%= @student.first_name %> <%= @student.last_name %>
+ </p>
+
+<%= link_to 'Edit', edit_book_path(@book) %>  |
+<%= link_to  " back to #{@student.first_name}'s books " , student_path(@student) %>
+
 

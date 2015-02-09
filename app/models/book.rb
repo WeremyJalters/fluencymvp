@@ -9,9 +9,9 @@ class Book < ActiveRecord::Base
   	self.self_corrections.to_f/(self.self_corrections.to_f + self.words_wrong.to_f)
   end
 
-  def current_student
-  	  
-  end
+  
+
+
 
   def self.to_csv(options = {})
    CSV.generate(options) do |csv|
